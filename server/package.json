@@ -1,0 +1,20 @@
+{
+  "name": "pricelisto",
+  "version": "1.0.0",
+  "description": "PriceListo is a web app that aggregates and compares product listings across multiple e-commerce platforms, helping users find the best deals effortlessly",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongodb": "^6.12.0",
+    "mongoose": "^8.9.2"
+  }
+}
