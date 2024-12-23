@@ -3,6 +3,7 @@ const PORT = 8080;
 const path = require("path");
 const axios = require("axios");
 const connectDB = require("./database/db")
+
 // 'app' is a server created using Express library
 const app = express();
 app.use(express.json())
@@ -29,9 +30,7 @@ async function getFacts() {
 }
 // getFacts();
 
-connectDB(() => {
-    console.log("Server connected to database.")
-});
+connectDB();
 
 
 // Serve static files from the React app
