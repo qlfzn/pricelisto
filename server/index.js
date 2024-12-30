@@ -7,13 +7,10 @@ const userRoute = require("./routes/userRoutes");
 const app = express();
 app.use(express.json())
 
-
-app.get('/', (req, res) => {
-    res.send('Welcome to the Pricelisto');
-});
-
 app.use("/users", userRoute);
-
+app.get("/", (req, res) => {
+    res.send("This is Pricelisto.")
+})
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
 
