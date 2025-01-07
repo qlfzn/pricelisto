@@ -17,3 +17,6 @@ Content-Type: application/json
     "email": "my_email@gmail.com",
     "password": "pass456"
 }
+
+### 
+GET http://localhost:8080/products/search?q=car

@@ -3,11 +3,15 @@ const PORT = 8080;
 const path = require("path");
 const connectDB = require("./database/db");
 const userRoute = require("./routes/userRoutes");
+const productRoute = require("./routes/productRoutes");
 
 const app = express();
 app.use(express.json())
 
+
 app.use("/users", userRoute);
+app.use("/products", productRoute);
+
 app.get("/", (req, res) => {
     res.send("This is Pricelisto.")
 })
