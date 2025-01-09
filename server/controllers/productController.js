@@ -20,8 +20,7 @@ const searchProducts = asyncHandler(async (req, res) => {
 
         res.json(productData);
     } catch (error) {
-        console.error("Error fetching product data:", error);
-        res.status(500).json({ message: "Internal Server Error" });
+        res.status(500).json({ message: "Error fetching product data.", error });
     }
 });
 

@@ -1,0 +1,110 @@
+/* General Styling */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #F5F7FA;
+    color: #111827;
+  }
+  
+  /* Layout Container */
+  .landing-container {
+    display: flex;
+    height: 100vh;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  /* Left Section (Auth Section) */
+  .auth-section {
+    width: 35%;
+    background-color: #1D4ED8;
+    color: white;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .auth-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .auth-section form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .auth-section input {
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  .auth-section button {
+    padding: 0.8rem;
+    background-color: #F97316;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .auth-section button:hover {
+    background-color: #D45409;
+  }
+  
+  .auth-section p {
+    margin-top: 1rem;
+    color: #F3F4F6;
+  }
+  
+  .auth-section a {
+    color: #F97316;
+    text-decoration: none;
+  }
+  
+  .auth-section a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Right Section (Intro Section) */
+  .intro-section {
+    width: 65%;
+    background-color: white;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+  
+  .intro-section h1 {
+    font-size: 2.5rem;
+    color: #111827;
+    margin-bottom: 1rem;
+  }
+  
+  .intro-section p {
+    font-size: 1.2rem;
+    color: #6B7280;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  
+  .intro-section ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    color: #111827;
+  }
+  
+  .intro-section li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  
