@@ -1,13 +1,15 @@
 const express = require("express");
 const PORT = 8080;
+const cors = require("cors");
 const path = require("path");
 const connectDB = require("./database/db");
 const userRoute = require("./routes/userRoutes");
 const productRoute = require("./routes/productRoutes");
+const auth = require("./middlewares/auth");
 
 const app = express();
+app.use(cors());
 app.use(express.json())
-
 
 app.use("/users", userRoute);
 app.use("/products", productRoute);
@@ -18,10 +20,18 @@ app.get("/", (req, res) => {
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-// The "catchall" handler: for any request that doesn't match one above, send back React's index.html file.
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
-});
+
+app.get("/free-endpoint", (req, res) => {
+    res.json({
+        message: "Free to access.",
+    })
+})
+
+app.get("/auth-endpoint", auth, (req, res) => {
+    res.json({
+        message: "Authorised to access.",
+    })
+})
 
 connectDB().then(() => {
     app.listen(PORT, () => {
