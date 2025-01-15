@@ -1,9 +1,12 @@
 const axios = require("axios");
 const asyncHandler = require("express-async-handler");
 
+// TODO: move pagination steps into a middleware
 // Fetch product data
 const searchProducts = asyncHandler(async (req, res) => {
     const searchQuery = req.query.q;
+    const limit = parseInt(req.query.limit) || 15;
+    const skip = parseInt(req.query.page) || 0;
 
     if (!searchQuery) {
         res.status(400);
@@ -11,7 +14,13 @@ const searchProducts = asyncHandler(async (req, res) => {
     }
 
     try {
-        const productData = (await axios.get(`https://dummyjson.com/products/search?q=${searchQuery}`)).data;
+        const productData = (await axios.get(`https://dummyjson.com/products/search`, {
+            params: {
+                q: searchQuery,
+                limit: limit,
+                skip: skip
+            }
+        })).data;
 
         if (!productData || productData.products.length === 0) {
             res.status(404);

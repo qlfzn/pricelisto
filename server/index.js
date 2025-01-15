@@ -11,7 +11,7 @@ const app = express();
 app.use(cors());
 app.use(express.json())
 
-app.use("/users", userRoute);
+app.use("/auth", userRoute);
 app.use("/products", productRoute);
 
 app.get("/", (req, res) => {

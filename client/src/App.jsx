@@ -2,8 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/LandingPage/LandingPage';
 import HomePage from './pages/HomePage/HomePage';
-import useAuth
- from '../hooks/useAuth';
+import useAuth from '../hooks/useAuth';
+import ProtectedRoute from './components/ProtectedRoute';
+
 function App() {
   return (
     <Router>
@@ -15,11 +16,6 @@ function App() {
       </Routes>
     </Router>
   );
-}
-
-const ProtectedRoute = ({ children }) => {
-  useAuth();
-  return children;
 }
 
 export default App;

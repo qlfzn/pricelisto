@@ -12,10 +12,10 @@ const LandingPage = () => {
   const HandleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const result = await axios.post("http://localhost:8080/users/login", { email, password });
+      const result = await axios.post("http://localhost:8080/auth/login", { email, password });
       console.log(result);
       if (result.data.token) {
-        // Save token to localStorage or state management
+        // Save token to localStorage
         localStorage.setItem('token', result.data.token);
         navigate("/home");
       } else {
@@ -56,7 +56,7 @@ const LandingPage = () => {
       <h1>Welcome to <span>PriceListo</span></h1>
       <p>Compare prices across multiple platforms in one place!</p>
       <ul>
-        <li>📦 Shopee, Lazada, AliExpress, and more</li>
+        <li>📦 Shopee, Lazada, Tiktok Shop, and more</li>
         <li>🔎 Fast and accurate item searches</li>
         <li>💰 Save money with price comparisons</li>
       </ul>
