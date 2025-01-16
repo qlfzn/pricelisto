@@ -19,7 +19,7 @@ Content-Type: application/json
 }
 
 ### 
-GET http://localhost:8080/products/search?q=phone
+GET http://localhost:8080/products/search?q=car
 
 ###
 GET  http://localhost:8080/auth-endpoint
