@@ -12,11 +12,12 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/auth", userRoute);
-app.use("/products", productRoute);
+app.use("/product", productRoute);
 
 app.get("/", (req, res) => {
   res.send("This is Pricelisto.");
 });
+
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, "client/build")));
 
