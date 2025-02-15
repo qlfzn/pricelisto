@@ -22,6 +22,12 @@ const SearchBar = ({ onSearch }) => {
     }
   };
 
+  const triggerButtonOnEnter = (e) => {
+    if (e.key === 'Enter') {
+      onSearch(input);
+    }
+  }
+
   return (
     <div className="search-bar-container">
       <div className="input-wrapper">
@@ -32,6 +38,7 @@ const SearchBar = ({ onSearch }) => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           aria-label="Search"
+          onKeyDown={triggerButtonOnEnter}
         />
       </div>
       <div className="search-button">
