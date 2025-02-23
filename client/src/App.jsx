@@ -1,9 +1,13 @@
 import React from "react";
+import Home from "./views/Home";
+
 
 const App = () => {
+  const name = "Aqil";
+
   return(
     <div>
-      <h1 class="text-2xl text-black text-bold" >Hello World!</h1>
+      <Home />
     </div>
   )
 }
