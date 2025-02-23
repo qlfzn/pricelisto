@@ -18,8 +18,7 @@ function SearchSection({ onSearch }) {
             Search for your product 
         </h1>
         <p className="text-lg text-gray-700 mb-8">
-          Introducing our cutting-edge UI Kit, a game-changer for designers and
-          developers alike! Our UI Kit empowers you to create stunning user interfaces.
+        Compare prices across multiple e-commerce platforms to find the best deal for your product.
         </p>
         <div className="flex items-center justify-center space-x-4">
           {/* Search Input (Like the Image) */}
@@ -51,7 +50,7 @@ function SearchSection({ onSearch }) {
           </button>
           <button
             onClick={handleSearch}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline"
+            className="bg-[#5171A5] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline"
           >
             Search
           </button>

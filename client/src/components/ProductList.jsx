@@ -12,11 +12,11 @@ function ProductList({ products }) {
         <div className="grid grid-cols-1 gap-4"> {/* Simplified Grid */}
           {products.map((product) => (
             <div key={product.id} className="bg-white rounded-md shadow-md flex items-center p-4"> {/* Flex Alignment */}
-              <img src={product.image} alt={product.name} className="w-20 h-20 object-cover rounded-md mr-4" />  {/* Smaller Image */}
+              <img src={product.thumbnail} alt={product.title} className="w-20 h-20 object-cover rounded-md mr-4" />  {/* Smaller Image */}
               <div>
-                <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
-                <p className="text-gray-600">{product.company}</p>
-                <p className="text-gray-600">{product.location}</p>
+                <h3 className="text-lg font-semibold text-gray-800">{product.title}</h3>
+                <p className="text-gray-600">{product.brand}</p>
+                <p className="text-gray-600">{product.link}</p>
                 <p className="text-gray-700 font-bold">{product.price}</p>
               </div>
             </div>
@@ -27,10 +27,10 @@ function ProductList({ products }) {
       {/* Right Side Content */}
       <div className="w-1/4 pl-4">
         <div className="bg-white rounded-md shadow-md p-4 mb-4">
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">Subscribe for updates</h3>
-          <p className="text-gray-600 text-sm mb-4">Turn on this alert so you don't miss out on openings that could fit your needs</p>
+          <h3 className="text-lg font-semibold text-gray-800 mb-2">Subscribe for price alerts</h3>
+          <p className="text-gray-600 text-sm mb-4">Get notified when prices drop for your favourite products</p>
           <input type="email" placeholder="Enter email" className="w-full pl-3 pr-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-2" />
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline w-full">Subscribe</button>
+          <button className="bg-[#FE9000] hover:bg-[#FFD447] text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline w-full">Subscribe</button>
         </div>
         <div className="bg-white rounded-md shadow-md p-4">
           <h3 className="text-lg font-semibold text-gray-800 mb-2">Related careers</h3>
