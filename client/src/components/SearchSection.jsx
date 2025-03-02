@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
 
-function SearchSection({ onSearch }) {
-  const [searchQuery, setSearchQuery] = useState('');
+function SearchSection({ searchTerm, setSearchTerm, onSearch }) {
+  const [typingTimeout, setTypingTimeout] = useState(null);
 
   const handleSearchInputChange = (event) => {
-    setSearchQuery(event.target.value);
-  };
+    const newTerm = event.target.value;
+    setSearchTerm(newTerm);
 
-  const handleSearch = () => {
-    onSearch(searchQuery);
+    if (typingTimeout) {
+      clearTimeout(typingTimeout);
+    }
+
+    const timeout = setTimeout(() => {
+      onSearch(newTerm);
+    }, 600);
+
+    setTypingTimeout(timeout);
   };
 
   return (
@@ -31,7 +38,7 @@ function SearchSection({ onSearch }) {
             <input
               type="text"
               placeholder="Type a product..."
-              value={searchQuery}
+              value={searchTerm}
               onChange={handleSearchInputChange}
               className="pl-10 pr-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
@@ -49,7 +56,7 @@ function SearchSection({ onSearch }) {
             Filters
           </button>
           <button
-            onClick={handleSearch}
+            onClick={() => onSearch(searchTerm)}
             className="bg-[#5171A5] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline"
           >
             Search
